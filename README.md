@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# infinite-scroll-react-test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> `react-intersection-observer` 라이브러리를 이용한 무한 스크롤 테스트 Repository 입니다.
 
-## Available Scripts
+## 학습 내용
 
-In the project directory, you can run:
+- `useInView()` 함수에서 `ref, inView`를 가져옴
+- 처음 가져온 `inView`의 값은 false이며, 화면에 `ref`가 보이면 `inView`가 true로 변경됨
+- `inView`가 true가 될 때마다 비동기 요청 (fetch)
 
-### `npm start`
+## 테스트
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`http://localhost:3000/test`:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 개발자 도구에서 Element가 보일 때 true, 안보일 때 false가 되는 것을 확인
 
-### `npm test`
+![](./docs/images/test-inview-false.png)
+![](./docs/images/test-inview-true.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`http://localhost:3000/scroll`:
 
-### `npm run build`
+- `inView`가 true일 때 단 한번만 데이터를 추가하도록 구성
+- 처음 렌더링시 1부터 50 블럭만 나오지만, 그 이후에는 51부터 100 블럭이 새로 추가되는 것을 확인
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](./docs/images/scroll.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 사용한 라이브러리
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- react-router-dom
+- sass
+- [react-intersection-observer](https://www.npmjs.com/package/react-intersection-observer)
 
-### `npm run eject`
+## 참고
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- https://slog.website/post/8

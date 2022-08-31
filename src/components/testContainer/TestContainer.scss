@@ -1,0 +1,22 @@
+.test-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .test-box {
+    width: 600px;
+    height: 1200px;
+    background-color: yellowgreen;
+    text-align: center;
+    line-height: 1200px;
+  }
+
+  .test-inview {
+    width: 600px;
+    height: 50px;
+    background-color: aquamarine;
+    text-align: center;
+    line-height: 50px;
+  }
+}
